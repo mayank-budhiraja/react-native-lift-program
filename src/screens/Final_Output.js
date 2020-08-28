@@ -7,7 +7,7 @@ function Final_Output ({ route, navigation }) {
 
     let { execute_arr } = route.params
 
-    const textInputComponents = execute_arr.map(type => <Text padding={10}>{type.id}</Text>)
+    const textInputComponents = execute_arr.map((type, index) => <Text key={index} padding={10}>{type.id}</Text>)
 
 
     return(

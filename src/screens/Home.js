@@ -129,7 +129,20 @@ function HomeScreen ({ navigation }) {
     }
     return(
     <Box as={SafeAreaView} backgroundColor='white' flex={1}>
-        
+        <Box flexDirection='row'>
+            <Box flexDirection='column' marginLeft={150}>
+                
+            </Box>
+            <Box flexDirection='column'>
+                <Card 
+                    down_index={''}
+                    up_index={''}
+                    index={''}
+                    floor_down={'Down  '}
+                    floor_up={'Up       '}
+                />
+            </Box>
+        </Box>
         <Box flexDirection='row' flex={1}>
             
             <Box flexDirection='column'>
@@ -209,7 +222,7 @@ function HomeScreen ({ navigation }) {
                     down_index={'down'}
                     up_index={'up'}
                     index={0}
-                    floor_down={'            '}
+                    floor_down={'           '}
                     floor_up={'Floor G'}
                 />  
             </Box>
