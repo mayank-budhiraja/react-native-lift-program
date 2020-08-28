@@ -2,7 +2,7 @@
 A simple lift/elevator program using react-native and redux
 
 ## Demo
-<img src="demo/sreen-demo.gif" height="400" />
+<img src="demo/screen-demo.gif" height="400" />
 
 ## Usage
 1. npm install
