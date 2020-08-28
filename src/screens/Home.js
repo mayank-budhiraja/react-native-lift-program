@@ -21,7 +21,7 @@ function HomeScreen ({ navigation }) {
     let [floor_6, setFloor_6] = React.useState('')
 
         
-        const check_nav = [{"floor": "navigate", "id": null}]
+        const check_nav = [{"floor": '', "id": ''}]
 
         //sort array
             //up -> ascending
@@ -42,9 +42,8 @@ function HomeScreen ({ navigation }) {
             let arr = next.concat(check_nav)
 
     function task (i){
-        setTimeout(() => {
-                console.log(i)
-                        switch(i){
+        
+            switch(i){
                             case 0: 
                                     setFloor_0('green');
                                     setTimeout(() => {
@@ -95,25 +94,34 @@ function HomeScreen ({ navigation }) {
                                     }, 1000)
                             break
         
-                        }        
-                }, 1000 * i)
+            }        
+                
     }
 
     function handle_Start(){
-        console.log("Check")
-        let i = 0;
-        for(i; i < arr.length; i++){
+            for(i = 0; i < arr.length; i++){
 
-            let current_floor = arr[i]
+                let current_floor = arr[i]
+                setTimeout(() => {
 
-            if(current_floor.floor == 'up'){
-                 task(current_floor.id)
+                    console.log(current_floor)
+                    if(current_floor.floor === 'up'){
+                        task(current_floor.id)
+                   }
+       
+                   else if (current_floor.floor === 'down'){
+                       task(current_floor.id)
+                    }
+       
+                    else {
+                        navigation.navigate('Final',{
+                            execute_arr: next
+                        })
+                    }
+
+                }, 1000 * i)
+                
             }
-
-            else if (current_floor.floor == 'down'){
-                 task(current_floor.id)
-            }
-        }
     }
 
     function handle_nav(){
@@ -207,7 +215,10 @@ function HomeScreen ({ navigation }) {
             </Box>
         </Box>
         
-        
+        {next.map((item, index) => {
+                                <Text key={index}> {item} </Text>
+                            })
+                        }
         
         <Box backgroundColor='yellow' 
             paddingTop={20} 
