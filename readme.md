@@ -15,7 +15,6 @@ A simple lift/elevator program using react-native and redux
 3. React Navigation
 4. Styled System
 5. Styled Components
-6. 
 
 ## Improvements
 1. Floor button can be clicked only once to improve performance
